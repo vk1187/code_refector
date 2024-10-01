@@ -1,0 +1,16 @@
+powershell Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "RemoteSigned"
+
+powershell Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "AllSigned"
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+powershell Set-ExecutionPolicy -Scope "CurrentUser" -ExecutionPolicy "RemoteSigned"
+
+
+
+non standred copilot
+
+
+word2vec  --- gensim ----glove------feature----clientdata
+NLTK     -----  cleaning
+Spacy    ----- Near 
