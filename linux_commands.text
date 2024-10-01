@@ -1,0 +1,68 @@
+sudo nginx -t
+sudo systemctl restart nginx
+sudo nginx -s reload
+sudo /etc/init.d/nginx restart
+sudo service nginx reload
+sudo service nginx status
+
+zip -r /datadrive/searchlego.zip /home/daisupport/searchlego
+zip -r /datadrive/backeup_DAI-PW-PdfParsing.zip /home/daisupport/DAI-PW-PdfParsing
+zip -r backup_searchlego.zip searchlego
+sudo cp -r /home/daisupport/DAI-PW-PdfParsing /datadrive/backeup_DAI-PW-PdfParsing
+
+----check all directory space occupations-----
+sudo du -h --max-depth=1 /
+
+
+------check the pid request in the servers 
+sudo lsof -i :5001
+sudo lsof -t -i :5002 | xargs sudo kill -9
+sudo lsof -t -i :5001 | xargs sudo kill -9
+
+rm -rf foldername
+ls -t | tail -n 5 | xargs rm -rf    	#delete last five files
+du -sh .    							#current directory space(k,m,g)
+sudo apt-get clean  					#clean cahe 
+df -h     								#all directory sapce
+rm -rf ~/.cache/*						#remove cahe files 
+
+------supervisor commands------------------
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start parsing_api
+sudo supervisorctl start searchlego
+
+
+----sublink commands---------
+ping publishwise-medialink-parsingapi.evalueserve.com:443
+
+sudo ln -s /etc/nginx/sites-available/parsing_api.conf /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/searchlego.conf /etc/nginx/sites-enabled/
+
+tail -f /var/log/supervisor/parsing_api.log
+
+cat /var/log/parsing_api.err.log
+cat /var/log/parsing_api.out.log
+
+10.54.21.7
+
+lsb_release -rs
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
+
+
+mongodb--------------------
+
+telnet 10.54.23.4 27017
+# or
+nc -zv 10.54.23.4 27017
+
+
+
+
+
+
+
+
