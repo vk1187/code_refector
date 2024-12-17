@@ -5,6 +5,8 @@ sudo /etc/init.d/nginx restart
 sudo service nginx reload
 sudo service nginx status
 
+
+10.0.0.4:9200/_cat/shards   # data size of index
 zip -r /datadrive/searchlego.zip /home/daisupport/searchlego
 zip -r /datadrive/backeup_DAI-PW-PdfParsing.zip /home/daisupport/DAI-PW-PdfParsing
 zip -r backup_searchlego.zip searchlego
